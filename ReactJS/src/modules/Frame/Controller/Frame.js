@@ -12,6 +12,7 @@ class Frame extends Component {
       currentScore: 450,
       currentTries: 0,
       answers: [],
+      difficulty: props.difficulty
     };
     this.continueModalData = {
       target: 'continue',
@@ -37,6 +38,12 @@ class Frame extends Component {
 
   componentDidMount() {
     this.handleNewRound();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.difficulty) {
+      this.setState({difficulty: nextProps.difficulty});
+    }
   }
 
   handleShowModal = (modal) => {
@@ -150,10 +157,10 @@ class Frame extends Component {
         let firstEquationPart = equation.substr(0, equation.indexOf('(') - 1);
         let operatorInBetween = equation.substr(equation.indexOf('(') - 1, 1);
         let total = firstEquationPart+operatorInBetween+parenthesesValue;
+        let correctedTotal = this.handleSameOperator(total);
         console.log(equation);
         console.log(total);
         console.log(correctedTotal);
-        let correctedTotal = this.handleSameOperator(total);
         totalValue = eval(correctedTotal);
       }
       if(equation.indexOf('(') === 0) {
