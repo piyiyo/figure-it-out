@@ -5,8 +5,13 @@ class Main extends Component {
   constructor() {
     super();
     this.state = {
-
+      difficulty = 'beginner'
     };
+  }
+
+  setDifficulty(event) {
+    this.state.difficulty = event.target.id.replace('diff_', '');
+    this.setState(this.state);
   }
 
   render() {
@@ -23,21 +28,19 @@ class Main extends Component {
           			<li><a href="#" className="grey">12</a></li>
           		</ul>
           	</li>
-          	<li className="divider"></li>
-          	<li><a href="#" id="pause" className="green">Pause (unscored)</a></li>
-          	<li className="divider"></li>
-          	<li><a href="#" id="resume" className="green">Resume</a></li>
-          	<li className="divider"></li>
-          	<li className="dropdown dropdown-submenu"><a href="#" className="dropdown-toggle green" data-toggle="dropdown">Helper</a>
+          	<li className="dropdown dropdown-submenu"><a href="#" className="dropdown-toggle green" data-toggle="dropdown">Difficulty</a>
           		<ul className="dropdown-menu">
-          			<li><a href="#" className="grey">On</a></li>
-          			<li><a href="#" className="grey">Off</a></li>
+          			<li><a href="#" className="grey" id="diff_beginner" onClick={this.setDifficulty.bind(this)}>Beginner</a></li>
+          			<li><a href="#" className="grey" id="diff_skilled" onClick={this.setDifficulty.bind(this)}>Skilled</a></li>
+                <li><a href="#" className="grey" id="diff_epic" onClick={this.setDifficulty.bind(this)}>Epic</a></li>
+                <li><a href="#" className="grey" id="diff_legendary" onClick={this.setDifficulty.bind(this)}>Legendary</a></li>
+                <li><a href="#" className="grey" id="diff_insane" onClick={this.setDifficulty.bind(this)}>Insane</a></li>
           		</ul>
           	</li>
             </ul>
           </div>
           <div className="score">Score: 0</div>
-          <Frame />
+          <Frame difficulty={this.state.difficulty} />
         </div>
     );
   }
