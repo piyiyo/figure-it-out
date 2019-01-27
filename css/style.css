@@ -1,11 +1,10 @@
 body {
-	background-color: #212121;
-	background-image: url("../images/green-gobbler.png");
-	color: #fff;
+	background-color: #fff;
+	color: #202020;
 }
 span.tab {
 	margin-left: 30px;
-	color: #898989;
+	color: #202020;
 }
 .exp {
 	font-size: 2.2em;
@@ -18,7 +17,7 @@ span.tab {
 	transition: color 0.35s ease-out;
 }
 .exp:hover {
-	color: #898989;
+	color: #9e9e9e;
 }
 .score {
 	font-size: 2.5em;
@@ -56,11 +55,11 @@ span.tab {
 }
 .limiter {
 	border-radius: 25px;
-	background-color: rgba(85, 85, 85, 0.7);
+	background-color: #dedede;
 }
 .equation, .options {
 	font-family: 'Passion One', cursive;
-	color: rgba(255, 255, 255, 0.8);
+	color: #202020;
 	text-align: center;
 }
 .equation {
@@ -71,7 +70,7 @@ span.tab {
 .response {
 	display: inline-block;
 	margin: 30px;
-	color: #bbbbbb;
+	color: #202020;
 	font-size: 60px;
 }
 .p-title {
