@@ -1,3 +1,16 @@
+@font-face {
+	font-family: Passion One;
+	src: url(../fonts/PassionOne-Bold.ttf);
+}
+@font-face {
+	font-family: Timmana;
+	src: url(../fonts/Timmana-Regular.ttf);
+}
+@font-face {
+	font-family: Abel;
+	src: url(../fonts/Abel-Regular.ttf);
+}
+
 body {
 	background-color: #fff;
 	color: #202020;
@@ -51,7 +64,7 @@ span.tab {
 	font-size: 1.2em;
 }
 .content {
-	margin-top: 200px;
+	margin-top: 350px;
 }
 .limiter {
 	border-radius: 25px;
@@ -65,13 +78,11 @@ span.tab {
 .equation {
 	text-align: left;
 	margin-bottom: 50px;
-	font-size: 70px;
+	font-size: 4.3em;
 }
-.response {
-	display: inline-block;
-	margin: 30px;
-	color: #202020;
-	font-size: 60px;
+.solution {
+	font-size: 4em;
+	cursor: pointer;
 }
 .p-title {
 	font-size: 1.8em;
@@ -306,17 +317,19 @@ a.play:hover > span:nth-child(10) {
 	}
 }
 @media (max-width: 1202px) {
-	.equation {
-		font-size: 60px;
+	.content {
+		margin-top: 180px;
 	}
-	.response {
-		font-size: 55px;
-		margin: 20px;
+	.equation {
+		font-size: 4.1em;
+	}
+	.solution {
+		font-size: 3.8em;
 	}
 }
 @media (max-width: 994px) {
-	.response {
-		margin: 12px;
+	.solution {
+		font-size: 3.2em;
 	}
 	.exp {
 		top: 30px;
@@ -335,11 +348,10 @@ a.play:hover > span:nth-child(10) {
 		margin-top: 150px;
 	}
 	.equation {
-		font-size: 40px;
+		font-size: 3.1em;
 	}
-	.response {
-		margin: 9px;
-		font-size: 48px;
+	.solution {
+		font-size: 2.8em;
 	}
 	.how-to {
 		font-size: 1.2em;
@@ -358,10 +370,9 @@ a.play:hover > span:nth-child(10) {
 		font-size: 1em;
 	}
 	.equation {
-		font-size: 30px;
+		font-size: 2.8em;
 	}
-	.response {
-		margin: 7px;
-		font-size: 28px;
+	.solution {
+		font-size: 2.5em;
 	}
 }

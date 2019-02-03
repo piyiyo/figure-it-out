@@ -5,7 +5,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const BUILD_DIR = path.resolve(__dirname, '../js');
 const APP_DIR = path.resolve(__dirname, 'src');
 
-const PROD = false
+const PROD = true
 const environment = PROD ? 'production' : 'development'
 
 const config = {

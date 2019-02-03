@@ -5,13 +5,19 @@ class Main extends Component {
   constructor() {
     super();
     this.state = {
-      difficulty: 'beginner'
+      difficulty: 'beginner',
+      score: 0
     };
   }
 
   setDifficulty(event) {
     this.state.difficulty = event.target.id.replace('diff_', '');
     this.setState(this.state);
+  }
+
+  handleScore = (newScore) => {
+    this.state.score = newScore
+    this.setState(this.state)
   }
 
   render() {
@@ -39,8 +45,8 @@ class Main extends Component {
           	</li>
             </ul>
           </div>
-          <div className="score">Score: 0</div>
-          <Frame difficulty={this.state.difficulty} />
+          <div className="score">Score: {this.state.score}</div>
+          <Frame difficulty={this.state.difficulty} handleScore={this.handleScore} />
         </div>
     );
   }
