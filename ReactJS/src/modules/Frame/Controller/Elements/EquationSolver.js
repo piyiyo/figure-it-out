@@ -204,9 +204,19 @@ class EquationSolver extends Component {
 
     getSolutions(answer, solutions){
         let randomSolutions = [];
-        while(randomSolutions.length < solutions) {
-            let randomOperation = Math.floor(Math.random()*2);
-            let randomSolution = null;
+
+        for (let i=0; i<solutions; i++) {
+            let randomSolution = this.generateRandomSolutionNumber(randomSolutions, answer);
+            randomSolutions.push(randomSolution);
+        }
+
+        return randomSolutions;
+    }
+
+    generateRandomSolutionNumber(randomSolutions, answer){
+        let randomOperation = Math.floor(Math.random()*2);
+        let randomSolution = null;
+        while (randomSolutions.includes(randomSolution) || answer === randomSolution || randomSolution === null) {
             switch (randomOperation) {
                 case 0:
                     if (answer.includes('.')) {
@@ -215,9 +225,6 @@ class EquationSolver extends Component {
                     } else {
                         randomSolution = this.elementary.addition(parseInt(answer), Math.floor(Math.random()*10));
                         randomSolution = randomSolution.toString();
-                    }
-                    if (!randomSolutions.includes(randomSolution) && answer !== randomSolution) {
-                        randomSolutions.push(randomSolution);
                     }
                     break;
                 case 1:
@@ -228,15 +235,11 @@ class EquationSolver extends Component {
                         randomSolution = this.elementary.substraction(parseInt(answer), Math.floor(Math.random()*10));
                         randomSolution = randomSolution.toString();
                     }
-                    if (!randomSolutions.includes(randomSolution) && answer !== randomSolution) {
-                        randomSolutions.push(randomSolution);
-                    }
                     break;
             }
-            
         }
 
-        return randomSolutions;
+        return randomSolution;
     }
 
 }

@@ -72,18 +72,17 @@ class Frame extends Component {
   handleGuessAnswer(event) {
     let answerGuess = event.target.id;
     this.state.currentTries = this.state.currentTries + 1;
-    if (this.state.solution == answerGuess) {
+    if (this.state.solution === answerGuess.replace('\\.', '.')) {
       $('#'+answerGuess).addClass("green");
       this.refs.countdown.pauseTimer(true);
     } else {
-      if (this.state.currentTries === 3) {
+      if (this.state.currentTries > 2) {
         this.handleShowModal('tries');
         this.refs.countdown.pauseTimer();
       } else {
         $('#'+answerGuess).addClass("red");
       }
     }
-    this.setState(this.state);
   }
 
   handleGetScore = (score) => {
