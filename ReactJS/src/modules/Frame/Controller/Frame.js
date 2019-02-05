@@ -73,14 +73,14 @@ class Frame extends Component {
     let answerGuess = event.target.id;
     this.state.currentTries = this.state.currentTries + 1;
     if (this.state.solution === answerGuess.replace('\\.', '.')) {
-      $('#'+answerGuess).addClass("green");
+      $('#'+answerGuess.replace('.', '\\.')).addClass("green");
       this.refs.countdown.pauseTimer(true);
     } else {
       if (this.state.currentTries > 2) {
         this.handleShowModal('tries');
         this.refs.countdown.pauseTimer();
       } else {
-        $('#'+answerGuess).addClass("red");
+        $('#'+answerGuess.replace('.', '\\.')).addClass("red");
       }
     }
   }
@@ -117,6 +117,9 @@ class Frame extends Component {
   handleNewRound() {
     let properties = this.handleManageScore();
     let numbers = this.prepareEquationNumbers(properties);
+    while(numbers.includes(0)) {
+      numbers = this.prepareEquationNumbers(properties);
+    }
     let equationParams = {
       equationLength: properties.equationLength,
       solutions: this.state.numberOfSolutions,
@@ -135,9 +138,10 @@ class Frame extends Component {
 
   prepareEquationNumbers(properties) {
     let numbersArray = [];
-    for (let i=0; i<properties.equationLength; i++) {
+    while (numbersArray.length < properties.equationLength) {
       numbersArray.push(Math.floor(Math.random()*properties.strength));
     }
+
     return numbersArray;
   }
 

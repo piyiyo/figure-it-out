@@ -204,19 +204,9 @@ class EquationSolver extends Component {
 
     getSolutions(answer, solutions){
         let randomSolutions = [];
-
-        for (let i=0; i<solutions; i++) {
-            let randomSolution = this.generateRandomSolutionNumber(randomSolutions, answer);
-            randomSolutions.push(randomSolution);
-        }
-
-        return randomSolutions;
-    }
-
-    generateRandomSolutionNumber(randomSolutions, answer){
-        let randomOperation = Math.floor(Math.random()*2);
-        let randomSolution = null;
-        while (randomSolutions.includes(randomSolution) || answer === randomSolution || randomSolution === null) {
+        while (randomSolutions.length < solutions) {
+            let randomOperation = Math.floor(Math.random()*2);
+            let randomSolution = null;
             switch (randomOperation) {
                 case 0:
                     if (answer.includes('.')) {
@@ -237,9 +227,12 @@ class EquationSolver extends Component {
                     }
                     break;
             }
+            if(!randomSolutions.indexOf(randomSolution) > -1) {
+                randomSolutions.push(randomSolution);
+            }
         }
-
-        return randomSolution;
+        
+        return randomSolutions;
     }
 
 }
