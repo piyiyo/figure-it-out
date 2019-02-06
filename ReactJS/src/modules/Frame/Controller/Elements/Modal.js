@@ -11,6 +11,10 @@ class Modal extends Component {
     };
   }
 
+  handleNewGame() {
+    this.props.handleStartAgain();
+  }
+
   render() {
     return(
       <div className="modal fade" id={this.state.target} tabIndex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-labelledby="modalLabel" aria-hidden="true">
@@ -23,7 +27,7 @@ class Modal extends Component {
             {this.state.text}
           </div>
           <div className="modal-footer">
-            <a href="#" id="play" className="play" data-dismiss="modal" data-text={this.state.data}>
+            <a href="#" id="play" className="play" data-dismiss="modal" data-text={this.state.data} onClick={this.handleNewGame.bind(this)}>
               <span>I</span> <span>a</span><span>m</span> <span>r</span><span>e</span><span>a</span><span>d</span><span>y</span>
             </a>
           </div>
