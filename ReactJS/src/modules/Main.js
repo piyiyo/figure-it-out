@@ -47,6 +47,7 @@ class Main extends Component {
           </div>
           <div className="score">Score: {this.state.score}</div>
           <Frame difficulty={this.state.difficulty} handleScore={this.handleScore} />
+          <div className="git"><a href="https://github.com/piyiyo/figure-it-out"><i class="fa fa-github"></i> Project</a></div>
         </div>
     );
   }

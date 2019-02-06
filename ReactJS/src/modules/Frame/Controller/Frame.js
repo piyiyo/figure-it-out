@@ -175,7 +175,7 @@ class Frame extends Component {
             <div className="how-to">
               <p className="p-title">How to play</p>
               <p>To calculate the result just apply the operators priority and solve the operation.</p>
-              <p>You have 20 seconds for each round and 3 tries to guess the correct answer. The higher the score, the more difficult the opertions become.</p>
+              <p>You have 20 seconds for each round and 3 tries to guess the correct answer. The higher the score, the more difficult the operations become.</p>
               <p>The game settings can be adjusted in the <span style={{color:'#ca3434'}}>menu button</span> located in the upper left corner.</p>
             </div>
             <div className="ready">

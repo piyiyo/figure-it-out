@@ -227,7 +227,7 @@ class EquationSolver extends Component {
                     }
                     break;
             }
-            if(!randomSolutions.indexOf(randomSolution) > -1) {
+            if((!randomSolutions.includes(randomSolution)) && (randomSolution !== answer)) {
                 randomSolutions.push(randomSolution);
             }
         }

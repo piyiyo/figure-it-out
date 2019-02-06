@@ -311,6 +311,30 @@ a.play:hover > span:nth-child(10) {
 	-moz-border-radius:6px 0 6px 6px;
 	border-radius:6px 0 6px 6px;
 }
+.git {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.git a {
+	font-size: 1.2em;
+	color: #afafaf;
+	text-decoration: none;
+	transition: color 0.8s ease;
+}
+.git a:hover {
+	color: #c13030;
+}
+.git a i {
+	font-size: 1.6em;
+}
+@media (max-width: 1920px) {
+	.content {
+		margin-top: 300px;
+	}
+}
 @media (max-width: 1258px) {
 	.dropdown-menu {
 		margin-right: 150px;
@@ -343,9 +367,14 @@ a.play:hover > span:nth-child(10) {
 		right: 40px;
 	}
 }
+@media (max-height: 850px) {
+	.git {
+		display: none;
+	}
+}
 @media (max-width: 728px) {
 	.content {
-		margin-top: 150px;
+		margin-top: 140px;
 	}
 	.equation {
 		font-size: 3.1em;
